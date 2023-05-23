@@ -1,12 +1,15 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Heading from './components/Heading';
+import Skills from './components/Skills';
 
 function App() {
   return (
-    <div className="bg-primary relative z-0 h-screen">
+    // Fix height problem
+    <div className="bg-primary relative z-0 h-[100em] text-white">
       <Navbar />
       <Heading username="torrenegra" />
+      <Skills username="torrenegra" />
     </div>
   );
 }

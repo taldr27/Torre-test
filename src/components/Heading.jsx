@@ -23,9 +23,9 @@ const Heading = ({ username }) => {
   if (loading) {
     return <p>Loading...</p>;
   }
-  console.log(userData);
+
   return (
-    <div className="text-white">
+    <div>
       {userData && (
         <div>
           <img src={userData.person.picture} alt="user-pic" />
