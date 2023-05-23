@@ -8,9 +8,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#030408',
-        secondary: '#aaa6c3',
-        tertiary: '#100f1c',
+        primary: '#27292d',
+        secondary: '#d2e139',
+        tertiary: '#373b41',
       },
       backgroundImage: {
         'primary-background': "url('/src/assets/primary-background1.jpg')",
