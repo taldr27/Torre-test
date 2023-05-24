@@ -15,7 +15,7 @@ const Heading = ({ dataArray, username }) => {
           <img src={dataArray.person.picture} alt="user" className="w-full h-full object-cover" />
         </div>
       </div>
-      <h2 className="text-secondary text-xl mt-[-10px]">{dataArray.person.name}</h2>
+      <h2 className="text-secondary text-2xl mt-[-10px]">{dataArray.person.name}</h2>
     </div>
   );
 };

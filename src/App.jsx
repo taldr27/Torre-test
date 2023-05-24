@@ -27,6 +27,7 @@ function App() {
         <>
           <Heading username="torrenegra" dataArray={dataArray} />
           <Skills username="torrenegra" dataArray={dataArray} />
+          <div className="w-[90%] self-center border border-tertiary mb-4" />
           <Experiences username="torrenegra" dataArray={dataArray} />
         </>
       )}
