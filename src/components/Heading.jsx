@@ -1,5 +1,5 @@
 import React from 'react';
-import { polygon } from '../assets';
+import polygon from '../assets/polygon.png';
 
 const Heading = ({ dataArray }) => (
   <div className="flex flex-col items-center my-[31px]">

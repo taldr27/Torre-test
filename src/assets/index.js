@@ -2,7 +2,6 @@ import master from './master.png';
 import expert from './expert.png';
 import proeficient from './proeficient.png';
 import beginner from './beginner.png';
-import polygon from './polygon.png';
 import noExperience from './noExperience.png';
 
 const skillsArray = [
@@ -33,7 +32,4 @@ const skillsArray = [
   },
 ];
 
-export {
-  skillsArray,
-  polygon,
-};
+export default skillsArray;
