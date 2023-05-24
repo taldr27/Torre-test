@@ -4,6 +4,7 @@ import Heading from './components/Heading';
 import Skills from './components/Skills';
 import { appContext } from './context/appContext';
 import Experiences from './components/Experiences';
+import fetchUserData from './data/fetchData';
 
 function App() {
   const dataArray = useContext(appContext);
@@ -18,9 +19,13 @@ function App() {
     }
   }, [dataArray]);
 
+  const handleFetchData = (searchTerm) => {
+    fetchUserData(searchTerm);
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-primary text-white">
-      <Navbar />
+      <Navbar onSearchValue={handleFetchData} />
       {loading ? (
         <p className="text-center">Loading App...</p>
       ) : (
