@@ -12,6 +12,7 @@ const Navbar = ({ onSearchValue }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSearchValue(searchTerm);
+    setShowSearch(!showSearch);
   };
 
   return (

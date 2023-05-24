@@ -11,37 +11,38 @@ function App() {
   const { dataArray, setArrayData } = useContext(appContext);
 
   const [loading, setLoading] = useState(true);
+  const [message, setMessage] = useState('Loading...');
 
   useEffect(() => {
-    if (dataArray === null) {
-      setLoading(true);
-    } else {
+    if (dataArray !== null) {
       setLoading(false);
     }
   }, [dataArray]);
 
   const handleFetchData = (searchTerm) => {
     setLoading(true);
-    fetchUserData(searchTerm).then((data) => {
-      setArrayData(data);
-      setLoading(false);
-      localSearchSave(searchTerm);
-    })
-      .catch((error) => {
+    setMessage('Loading...');
+    fetchUserData(searchTerm)
+      .then((data) => {
+        setArrayData(data);
         setLoading(false);
+        localSearchSave(searchTerm);
+      })
+      .catch((error) => {
+        setMessage('User not found!');
         return error;
       });
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-primary text-white">
+    <div className="flex flex-col min-h-screen h-screen bg-primary text-white">
+      <Navbar onSearchValue={handleFetchData} />
       {loading ? (
-        <div className="flex text-center self-center h-screen items-center">
-          <p className="text-3xl text-secondary animate-pulse duration-75">Loading...</p>
+        <div className="flex text-center self-center h-full items-center">
+          <p className="text-3xl text-secondary animate-pulse duration-75">{message}</p>
         </div>
       ) : (
         <>
-          <Navbar onSearchValue={handleFetchData} />
           <Heading dataArray={dataArray} />
           <Skills dataArray={dataArray} />
           <div className="w-[90%] self-center border border-tertiary mb-4" />

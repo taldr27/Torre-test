@@ -5,10 +5,17 @@ const defaultValue = localStorage.getItem('user') || 'torrenegra';
 
 const fetchUserData = async (username) => {
   try {
-    const response = username ? await axios.get(`${url}${username}`) : await axios.get(`${url}${defaultValue}`);
+    const response = username
+      ? await axios.get(`${url}${username}`)
+      : await axios.get(`${url}${defaultValue}`);
+
+    if (response.status === 500) {
+      throw new Error('User not found');
+    }
+
     return response.data;
   } catch (error) {
-    return error;
+    throw new Error('User not found');
   }
 };
 
