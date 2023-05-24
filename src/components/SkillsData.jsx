@@ -1,14 +1,20 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 
-// eslint-disable-next-line react/prop-types
 const SkillsData = ({ experienceLevel, dataArray }) => {
-  console.log(experienceLevel);
-  console.log(dataArray);
+  const filter = dataArray.strengths.filter((strength) => strength.proficiency === experienceLevel);
+  if (filter.length === 0) {
+    return <p>EMPTY</p>;
+  }
   return (
-    <>
-      <h1>UL</h1>
-    </>
+    <div>
+      {filter.map((filterStrength) => (
+        <div key={filterStrength.id}>
+          <div>
+            <h1>{filterStrength.name}</h1>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 };
 
