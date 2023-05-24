@@ -11,6 +11,7 @@ export default {
         primary: '#27292d',
         secondary: '#d2e139',
         tertiary: '#373b41',
+        'custom-gray': '#A9A9AB',
       },
       backgroundImage: {
         'primary-background': "url('/src/assets/primary-background1.jpg')",

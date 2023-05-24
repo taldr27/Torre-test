@@ -3,6 +3,7 @@ import axios from 'axios';
 const userUrl = 'http://127.0.0.1:3001/users/';
 const jobUrl = 'http://127.0.0.1:3001/jobs/';
 const defaultUser = localStorage.getItem('user') || 'torrenegra';
+// Using the software engineering job post
 const defaultJob = 'VdLDxzZd';
 
 const fetchUserData = async (username) => {
