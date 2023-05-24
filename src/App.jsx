@@ -25,11 +25,13 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen bg-primary text-white">
-      <Navbar onSearchValue={handleFetchData} />
       {loading ? (
-        <p className="text-center">Loading App...</p>
+        <div className="flex text-center self-center h-screen items-center">
+          <p className="text-3xl text-secondary">Loading App...</p>
+        </div>
       ) : (
         <>
+          <Navbar onSearchValue={handleFetchData} />
           <Heading username="torrenegra" dataArray={dataArray} />
           <Skills username="torrenegra" dataArray={dataArray} />
           <div className="w-[90%] self-center border border-tertiary mb-4" />
