@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Heading from './components/Heading';
 import Skills from './components/Skills';
 import { appContext } from './context/appContext';
+import Experiences from './components/Experiences';
 
 function App() {
   const dataArray = useContext(appContext);
@@ -26,6 +27,7 @@ function App() {
         <>
           <Heading username="torrenegra" dataArray={dataArray} />
           <Skills username="torrenegra" dataArray={dataArray} />
+          <Experiences username="torrenegra" dataArray={dataArray} />
         </>
       )}
     </div>
