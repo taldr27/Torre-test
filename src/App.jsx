@@ -48,7 +48,7 @@ function App() {
             <div className="xl:w-2/4">
               <Skills dataArray={dataArray} />
             </div>
-            <div className="w-[100%] lg:w-[1px] self-center border border-tertiary mb-4 lg:mx-5 lg:h-screen" />
+            <div className="w-[100%] lg:w-[1px] border border-tertiary mb-4 lg:mx-5 lg:min-h-screen" />
             <div className="xl:w-2/4">
               <Experiences dataArray={dataArray} />
             </div>
