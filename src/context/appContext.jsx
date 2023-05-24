@@ -1,9 +1,10 @@
 import React, { createContext, useEffect, useState } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from 'prop-types';
 import fetchUserData from '../data/fetchData';
 
 const appContext = createContext();
 
-// eslint-disable-next-line react/prop-types
 const ContextProvider = ({ children }) => {
   const [dataArray, setDataArray] = useState(null);
 
@@ -24,3 +25,7 @@ const ContextProvider = ({ children }) => {
 };
 
 export { appContext, ContextProvider };
+
+ContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};

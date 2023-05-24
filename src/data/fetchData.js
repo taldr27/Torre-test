@@ -5,8 +5,7 @@ const fetchUserData = async () => {
     const response = await axios.get('http://127.0.0.1:3001/users/torrenegra');
     return response.data;
   } catch (error) {
-    console.log(error);
-    return null;
+    return error;
   }
 };
 

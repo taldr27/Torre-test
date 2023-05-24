@@ -1,37 +1,28 @@
 import React, { useEffect, useState } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import axios from 'axios';
 
-// eslint-disable-next-line react/prop-types
-const Heading = ({ username }) => {
-  const [userData, setUserData] = useState(null);
+const Heading = ({ dataArray, username }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const response = await axios.get(`http://127.0.0.1:3001/users/${username}`);
-        setUserData(response.data);
-        setLoading(false);
-      } catch (error) {
-        setLoading(false);
-      }
-    };
-    fetchUserData();
-  }, [username]);
+    if (dataArray === null) {
+      setLoading(true);
+    } else {
+      setLoading(false);
+    }
+  }, [dataArray]);
 
   if (loading) {
     return <p>Loading...</p>;
   }
 
+  console.log(username);
+
   return (
     <div>
-      {userData && (
-        <div>
-          <img src={userData.person.picture} alt="user-pic" />
-          <h2>{userData.person.name}</h2>
-        </div>
-      )}
+      <div>
+        <img src={dataArray.person.picture} alt="user-pic" />
+        <h2>{dataArray.person.name}</h2>
+      </div>
     </div>
   );
 };
