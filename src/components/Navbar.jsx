@@ -18,29 +18,32 @@ const Navbar = ({ onSearchValue }) => {
     <nav className="flex justify-between w-full h-[72px] bg-primary text-white px-4 py-[21px] shadow-xl">
       <div className="flex items-center gap-5">
         <RxHamburgerMenu className="text-xl" />
-        <h2 className=" text-2xl">
-          torre
-          <span className="text-secondary">.co</span>
-        </h2>
+        {!showSearch && (
+          <>
+            <h2 className="text-2xl">
+              torre
+              <span className="text-secondary">.co</span>
+            </h2>
+          </>
+        )}
       </div>
       <div className="flex items-center gap-5 text-xl">
-        {!showSearch && (
-          <button type="button" onClick={() => setShowSearch(!showSearch)}>
+        {!showSearch ? (
+          <button type="button" onClick={() => setShowSearch(true)}>
             <RxMagnifyingGlass />
           </button>
-        )}
-        {showSearch ? (
+        ) : (
           <form onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Search by username..."
               value={searchTerm}
               onChange={handleInputChange}
+              className="bg-transparent outline-none"
             />
           </form>
-        ) : (
-          <h2 className="text-secondary">SIGN IN</h2>
         )}
+        {!showSearch && <h2 className="text-secondary">SIGN IN</h2>}
       </div>
     </nav>
   );

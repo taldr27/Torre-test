@@ -10,6 +10,7 @@ function App() {
   const dataArray = useContext(appContext);
 
   const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState('torrenegra');
 
   useEffect(() => {
     if (dataArray === null) {
@@ -20,7 +21,9 @@ function App() {
   }, [dataArray]);
 
   const handleFetchData = (searchTerm) => {
+    setLoading(true);
     fetchUserData(searchTerm);
+    setUser(searchTerm);
   };
 
   return (
@@ -32,10 +35,10 @@ function App() {
       ) : (
         <>
           <Navbar onSearchValue={handleFetchData} />
-          <Heading username="torrenegra" dataArray={dataArray} />
-          <Skills username="torrenegra" dataArray={dataArray} />
+          <Heading username={user} dataArray={dataArray} />
+          <Skills username={user} dataArray={dataArray} />
           <div className="w-[90%] self-center border border-tertiary mb-4" />
-          <Experiences username="torrenegra" dataArray={dataArray} />
+          <Experiences username={user} dataArray={dataArray} />
         </>
       )}
     </div>
