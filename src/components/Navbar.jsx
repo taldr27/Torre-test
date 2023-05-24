@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
 import { RxHamburgerMenu, RxMagnifyingGlass } from 'react-icons/rx';
 
-const Navbar = () => {
+const Navbar = ({ onSearchValue }) => {
   const [showSearch, setShowSearch] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleInputChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSearchValue(searchTerm);
+  };
 
   return (
     <nav className="flex justify-between w-full h-[72px] bg-primary text-white px-4 py-[21px] shadow-xl">
@@ -20,7 +30,14 @@ const Navbar = () => {
           </button>
         )}
         {showSearch ? (
-          <input type="text" placeholder="Search..." />
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Search by username..."
+              value={searchTerm}
+              onChange={handleInputChange}
+            />
+          </form>
         ) : (
           <h2 className="text-secondary">SIGN IN</h2>
         )}
