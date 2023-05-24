@@ -1,17 +1,42 @@
 import React from 'react';
 
-const Experiences = ({ dataArray }) => {
-  console.log(dataArray);
-  return (
-    <div className="flex flex-col gap-5 ml-4 mr-6">
-      <h2 className="mb-6">Previous Experiences:</h2>
-      {dataArray.experiences.map((experience) => (
-        <div key={experience.id} className="h-20 bg-red-500">
-          <h1>{experience.name}</h1>
-        </div>
-      ))}
+const ExperienceItem = ({ experience }) => (
+  <div key={experience.id} className="flex flex-col">
+    <span className="text-secondary">{experience.name}</span>
+    {experience.organizations[0] ? (
+      <span>
+        {experience.organizations[0].name}
+      </span>
+    ) : ''}
+    <div className="text-gray-300">
+      <span>
+        {experience.fromMonth}
+      </span>
+      <span>
+        {experience.fromYear}
+      </span>
+      {' - '}
+      <span>
+        {experience.toMonth}
+      </span>
+      <span>
+        {experience.toYear}
+      </span>
     </div>
-  );
-};
+  </div>
+);
+
+const Experiences = ({ dataArray }) => (
+  <div className="flex flex-col gap-5 ml-4 mr-6">
+    <h2>Previous Experiences:</h2>
+    {dataArray.experiences.map((experience) => (
+      <ExperienceItem
+        key={experience.id}
+        experience={experience}
+      />
+    ))}
+
+  </div>
+);
 
 export default Experiences;
