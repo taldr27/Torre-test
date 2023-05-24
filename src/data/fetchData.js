@@ -1,8 +1,11 @@
 import axios from 'axios';
 
+const url = 'http://127.0.0.1:3001/users/';
+const defaultValue = 'torrenegra';
+
 const fetchUserData = async (username) => {
   try {
-    const response = await axios.get(`http://127.0.0.1:3001/users/${username}`);
+    const response = username ? await axios.get(`${url}${username}`) : await axios.get(`${url}${defaultValue}`);
     return response.data;
   } catch (error) {
     return error;
