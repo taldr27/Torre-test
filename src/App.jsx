@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Heading from './components/Heading';
 import Skills from './components/Skills';
@@ -7,12 +7,27 @@ import { appContext } from './context/appContext';
 function App() {
   const dataArray = useContext(appContext);
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (dataArray === null) {
+      setLoading(true);
+    } else {
+      setLoading(false);
+    }
+  }, [dataArray]);
+
   return (
-    // Fix height problem
-    <div className="bg-primary relative z-0 h-[100em] text-white">
+    <div className="flex flex-col min-h-screen bg-primary text-white">
       <Navbar />
-      <Heading username="torrenegra" dataArray={dataArray} />
-      <Skills username="torrenegra" dataArray={dataArray} />
+      {loading ? (
+        <p className="text-center">Loading App...</p>
+      ) : (
+        <>
+          <Heading username="torrenegra" dataArray={dataArray} />
+          <Skills username="torrenegra" dataArray={dataArray} />
+        </>
+      )}
     </div>
   );
 }
