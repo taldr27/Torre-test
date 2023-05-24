@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-const userUrl = 'http://127.0.0.1:3001/users/';
-const jobUrl = 'http://127.0.0.1:3001/jobs/';
+// Render Back-End Links, it needs time for the first load.
+const userUrl = 'https://torre-backend-test.onrender.com/users/';
+const jobUrl = 'https://torre-backend-test.onrender.com/jobs/';
 const defaultUser = localStorage.getItem('user') || 'torrenegra';
 // Using the software engineering job post
 const defaultJob = 'VdLDxzZd';
