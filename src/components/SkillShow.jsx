@@ -14,8 +14,15 @@ const SkillShow = ({ handleShow, filterData, element }) => {
         <CgClose onClick={handleOpen} className="text-2xl" />
         <h2>{selected.name}</h2>
       </nav>
-      <div>
-        <h1>content</h1>
+      <div className="flex flex-col">
+        <span>
+          Proficiency:
+          {selected.proficiency}
+        </span>
+        <span>
+          Recommendations:
+          {selected.recommendations}
+        </span>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import Heading from './components/Heading';
 import Skills from './components/Skills';
 import { appContext } from './context/appContext';
 import Experiences from './components/Experiences';
-import fetchUserData from './data/fetchData';
+import { fetchUserData } from './data/fetchData';
 import localSearchSave from './data/localSearchSave';
 
 function App() {

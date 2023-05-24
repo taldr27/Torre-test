@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import fetchUserData from '../data/fetchData';
+import { fetchUserData } from '../data/fetchData';
 
 const appContext = createContext();
 
