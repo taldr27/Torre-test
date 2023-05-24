@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import skillsArray from '../assets';
+import { skillsArray } from '../assets';
 import SkillsData from './SkillsData';
 
 const Skills = ({ dataArray }) => {
