@@ -15,12 +15,12 @@ const SkillShow = ({
   );
 
   return (
-    <div className="fixed h-full bg-primary inset-0 z-50 xl:w-2/4 xl:h-[50%] xl:inset-auto">
+    <div className="fixed h-full bg-primary inset-0 z-50">
       <nav className="flex items-center gap-3 py-5 px-4 text-xl shadow-xl text-white mb-9">
         <CgClose onClick={handleOpen} className="text-2xl cursor-pointer" />
         <h2>{selected.name}</h2>
       </nav>
-      <div className="mx-4">
+      <div className="mx-4 xl:p-32">
         <div className="flex flex-col text-sm">
           <span>
             Proficiency:
@@ -29,7 +29,7 @@ const SkillShow = ({
               {selected.proficiency}
             </span>
           </span>
-          <span>
+          <span className="mb-5">
             Recommendations:
             {' '}
             <span className="text-custom-gray">
@@ -37,7 +37,7 @@ const SkillShow = ({
             </span>
           </span>
         </div>
-        <div className="w-[100%] lg:w-[1px] border border-tertiary my-4 lg:mx-5 lg:min-h-screen" />
+        <div className="w-[100%] lg:w-[1px] border border-tertiary my-4 lg:hidden" />
         <div>
           <span>
             Jobs with this skill:

@@ -29,11 +29,11 @@ const SkillsData = ({ experienceLevel, dataArray, jobs }) => {
           />
         )
         : filter.map((filterStrength) => (
-          <button type="button" key={filterStrength.id} onClick={() => handleShowSkill(filterStrength.name)} className="px-2 py-1 bg-tertiary rounded-xl text-sm flex items-center hover:bg-primary ">
+          <button type="button" key={filterStrength.id} onClick={() => handleShowSkill(filterStrength.name)} className="px-3 py-1 bg-tertiary rounded-xl text-sm flex items-center hover:bg-primary ">
             {filterStrength.name}
             {filterStrength.weight ? (
               <div className="flex items-center ml-2 gap-1">
-                <FaWeightHanging />
+                <FaWeightHanging className="text-custom-gray" />
                 <span>{filterStrength.weight.toFixed(1)}</span>
               </div>
             ) : ''}

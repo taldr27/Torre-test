@@ -4,7 +4,7 @@ import SkillsData from './SkillsData';
 
 const Skills = ({ dataArray, jobs }) => (
   <div className="ml-4 mr-6 lg:mr-0">
-    <h2 className="mb-6 text-xl">Skills and Interests:</h2>
+    <h2 className="mb-5 text-xl">Skills and Interests:</h2>
     {
         skillsArray.map((skill) => (
           <div key={skill.id} className="mb-5">

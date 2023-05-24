@@ -3,7 +3,7 @@ import { RiSuitcaseLine } from 'react-icons/ri';
 
 const ExperienceItem = ({ experience }) => (
   <div key={experience.id} className="flex items-center gap-3">
-    <RiSuitcaseLine className="text-2xl" />
+    <RiSuitcaseLine className="text-2xl text-custom-gray" />
     <div className="flex flex-col w-72">
       <span className="text-secondary">{experience.name}</span>
       {experience.organizations[0] ? (
