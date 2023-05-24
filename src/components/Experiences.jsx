@@ -2,8 +2,8 @@ import React from 'react';
 import { RiSuitcaseLine } from 'react-icons/ri';
 
 const ExperienceItem = ({ experience }) => (
-  <div key={experience.id} className="flex items-center gap-4">
-    <RiSuitcaseLine className="text-xl" />
+  <div key={experience.id} className="flex items-center gap-3">
+    <RiSuitcaseLine className="text-2xl" />
     <div className="flex flex-col w-72">
       <span className="text-secondary">{experience.name}</span>
       {experience.organizations[0] ? (

@@ -3,7 +3,7 @@ import { skillsArray } from '../assets';
 import SkillsData from './SkillsData';
 
 const Skills = ({ dataArray }) => (
-  <div className="ml-4 mr-6">
+  <div className="ml-4 mr-6 lg:mr-0">
     <h2 className="mb-6 text-xl">Skills and Interests:</h2>
     {
         skillsArray.map((skill) => (

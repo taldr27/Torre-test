@@ -13,6 +13,7 @@ const Navbar = ({ onSearchValue }) => {
     event.preventDefault();
     onSearchValue(searchTerm);
     setShowSearch(!showSearch);
+    setSearchTerm('');
   };
 
   return (
