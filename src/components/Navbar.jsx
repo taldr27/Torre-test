@@ -39,7 +39,7 @@ const Navbar = ({ onSearchValue }) => {
               placeholder="Search by username..."
               value={searchTerm}
               onChange={handleInputChange}
-              className="bg-transparent outline-none"
+              className="bg-transparent outline-none border border-secondary rounded-xl p-2 placeholder:p-2"
             />
           </form>
         )}

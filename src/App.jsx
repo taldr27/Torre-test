@@ -37,7 +37,7 @@ function App() {
     <div className="flex flex-col min-h-screen bg-primary text-white">
       {loading ? (
         <div className="flex text-center self-center h-screen items-center">
-          <p className="text-3xl text-secondary">Loading App...</p>
+          <p className="text-3xl text-secondary animate-pulse duration-75">Loading...</p>
         </div>
       ) : (
         <>
