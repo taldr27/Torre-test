@@ -2,7 +2,7 @@ import React from 'react';
 import { skillsArray } from '../assets';
 import SkillsData from './SkillsData';
 
-const Skills = ({ dataArray }) => (
+const Skills = ({ dataArray, jobs }) => (
   <div className="ml-4 mr-6 lg:mr-0">
     <h2 className="mb-6 text-xl">Skills and Interests:</h2>
     {
@@ -12,7 +12,7 @@ const Skills = ({ dataArray }) => (
               <img src={skill.img} alt={skill.img} className="w-6 mr-1" />
               <span>{skill.name}</span>
             </div>
-            <SkillsData experienceLevel={skill.id} dataArray={dataArray} />
+            <SkillsData experienceLevel={skill.id} dataArray={dataArray} jobs={jobs} />
           </div>
         ))
       }

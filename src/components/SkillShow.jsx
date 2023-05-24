@@ -1,12 +1,18 @@
 import React from 'react';
 import { CgClose } from 'react-icons/cg';
 
-const SkillShow = ({ handleShow, filterData, element }) => {
+const SkillShow = ({
+  handleShow, filterData, element, jobs,
+}) => {
   const handleOpen = () => {
     handleShow(false);
   };
 
-  const selected = filterData.find((filtered) => filtered.id === element);
+  const selected = filterData.find((filtered) => filtered.name === element);
+
+  const filterJobs = jobs.strengths.filter(
+    (job) => job.name.toLowerCase() === element.toLowerCase(),
+  );
 
   return (
     <div className="fixed h-full bg-primary inset-0 z-50">
@@ -23,6 +29,16 @@ const SkillShow = ({ handleShow, filterData, element }) => {
           Recommendations:
           {selected.recommendations}
         </span>
+      </div>
+      <div>
+        Jobs with this skills
+        {filterJobs.length
+          ? (
+            <div>
+              <h2>{jobs.objective}</h2>
+            </div>
+          )
+          : <p>There are no jobs related with this skill</p>}
       </div>
     </div>
   );

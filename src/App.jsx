@@ -8,7 +8,7 @@ import { fetchUserData } from './data/fetchData';
 import localSearchSave from './data/localSearchSave';
 
 function App() {
-  const { dataArray, setArrayData } = useContext(appContext);
+  const { dataArray, setArrayData, jobDataArray } = useContext(appContext);
 
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState('Loading...');
@@ -46,7 +46,7 @@ function App() {
           <Heading dataArray={dataArray} />
           <div className="xl:flex">
             <div className="xl:w-2/4">
-              <Skills dataArray={dataArray} />
+              <Skills dataArray={dataArray} jobs={jobDataArray} />
             </div>
             <div className="w-[100%] lg:w-[1px] border border-tertiary mb-4 lg:mx-5 lg:min-h-screen" />
             <div className="xl:w-2/4">
