@@ -4,6 +4,7 @@ import axios from 'axios';
 const userUrl = 'https://torre-backend-test.onrender.com/users/';
 const jobUrl = 'https://torre-backend-test.onrender.com/jobs/';
 const defaultUser = localStorage.getItem('user') || 'torrenegra';
+
 // Using the software engineering job post
 const defaultJob = 'VdLDxzZd';
 
@@ -29,7 +30,7 @@ const fetchJobData = async () => {
 
     return response.data;
   } catch (error) {
-    throw new Error('User not found');
+    throw new Error('Job not found');
   }
 };
 
