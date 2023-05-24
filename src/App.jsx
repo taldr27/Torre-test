@@ -5,12 +5,12 @@ import Skills from './components/Skills';
 import { appContext } from './context/appContext';
 import Experiences from './components/Experiences';
 import fetchUserData from './data/fetchData';
+import localSearchSave from './data/localSearchSave';
 
 function App() {
-  const dataArray = useContext(appContext);
+  const { dataArray, setArrayData } = useContext(appContext);
 
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState('torrenegra');
 
   useEffect(() => {
     if (dataArray === null) {
@@ -22,8 +22,15 @@ function App() {
 
   const handleFetchData = (searchTerm) => {
     setLoading(true);
-    fetchUserData(searchTerm);
-    setUser(searchTerm);
+    fetchUserData(searchTerm).then((data) => {
+      setArrayData(data);
+      setLoading(false);
+      localSearchSave(searchTerm);
+    })
+      .catch((error) => {
+        setLoading(false);
+        return error;
+      });
   };
 
   return (
@@ -35,10 +42,10 @@ function App() {
       ) : (
         <>
           <Navbar onSearchValue={handleFetchData} />
-          <Heading username={user} dataArray={dataArray} />
-          <Skills username={user} dataArray={dataArray} />
+          <Heading dataArray={dataArray} />
+          <Skills dataArray={dataArray} />
           <div className="w-[90%] self-center border border-tertiary mb-4" />
-          <Experiences username={user} dataArray={dataArray} />
+          <Experiences dataArray={dataArray} />
         </>
       )}
     </div>

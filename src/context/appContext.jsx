@@ -15,8 +15,12 @@ const ContextProvider = ({ children }) => {
     fetchData();
   }, []);
 
+  const setArrayData = (data) => {
+    setDataArray(data);
+  };
+
   return (
-    <appContext.Provider value={dataArray}>
+    <appContext.Provider value={{ dataArray, setArrayData }}>
       {children}
     </appContext.Provider>
   );
