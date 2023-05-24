@@ -3,7 +3,7 @@ import expert from './expert.png';
 import proeficient from './proeficient.png';
 import beginner from './beginner.png';
 import noExperience from './noExperience.png';
-import polygon from './polygon.svg';
+import polygon from './polygon.png';
 
 const skillsArray = [
   {
