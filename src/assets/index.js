@@ -1,6 +1,6 @@
 import master from './master.png';
 import expert from './expert.png';
-import proeficient from './proeficient.png';
+import proficient from './proficient.png';
 import beginner from './beginner.png';
 import noExperience from './noExperience.png';
 
@@ -16,9 +16,9 @@ const skillsArray = [
     img: expert,
   },
   {
-    id: 'proeficient',
-    name: 'Proeficient',
-    img: proeficient,
+    id: 'proficient',
+    name: 'Proficient',
+    img: proficient,
   },
   {
     id: 'beginner',
