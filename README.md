@@ -57,7 +57,7 @@ Developed using React, useContext and Ruby on Rails for the Back-End API.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo](https://torrefront-lmqea6ead-taldr27.vercel.app/)
+- [Live Demo](https://torre-test-kj2ldp0v6-taldr27.vercel.app/)
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
