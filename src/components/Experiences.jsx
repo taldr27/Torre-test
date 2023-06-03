@@ -13,22 +13,37 @@ const ExperienceItem = ({ experience }) => (
       ) : ''}
       <div className="text-gray-300">
         <span>
-          {experience.fromMonth}
+          {experience.fromMonth
+            ? (
+              <>
+                <span>
+                  {experience.fromMonth}
+                  {' '}
+                </span>
+                <span>
+                  {experience.fromYear}
+                  {' '}
+                </span>
+                {experience.toMonth
+                  ? (
+                    <>
+                      {' - '}
+                      <span>
+                        {experience.toMonth}
+                        {'  '}
+                      </span>
+                      <span>
+                        {experience.toYear}
+                      </span>
+                    </>
+                  )
+                  : '- Present'}
+              </>
+            )
+            : 'No date given'}
           {' '}
         </span>
-        <span>
-          {experience.fromYear}
-          {' '}
-        </span>
-        {' - '}
-        <span>
-          {experience.toMonth}
-          {' '}
-        </span>
-        <span>
-          {experience.toYear}
-          {' '}
-        </span>
+
       </div>
     </div>
   </div>

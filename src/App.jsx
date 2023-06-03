@@ -28,9 +28,8 @@ function App() {
         setLoading(false);
         localSearchSave(searchTerm);
       })
-      .catch((error) => {
+      .catch(() => {
         setMessage('User not found!');
-        return error;
       });
   };
 
@@ -49,7 +48,7 @@ function App() {
               <Skills dataArray={dataArray} jobs={jobDataArray} />
             </div>
             <div className="w-[100%] lg:w-[1px] border border-tertiary mb-4 lg:mx-5 lg:min-h-screen" />
-            <div className="xl:w-2/4">
+            <div className="xl:w-2/4 mb-10">
               <Experiences dataArray={dataArray} />
             </div>
           </div>
