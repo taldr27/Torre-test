@@ -37,17 +37,17 @@ function App() {
     <div className="flex flex-col min-h-screen h-full bg-primary text-white">
       <Navbar onSearchValue={handleFetchData} />
       {loading ? (
-        <div className="flex text-center self-center h-full items-center">
-          <p className="text-3xl text-secondary animate-pulse duration-75">{message}</p>
+        <div className="flex h-[89vh] items-center">
+          <p className="text-3xl text-secondary animate-pulse duration-75 mx-auto">{message}</p>
         </div>
       ) : (
         <div className="xl:flex xl:flex-col xl:justify-center xl:px-80">
           <Heading dataArray={dataArray} />
-          <div className="xl:flex">
+          <div className="xl:flex xl:flex-row flex flex-col">
             <div className="xl:w-2/4">
               <Skills dataArray={dataArray} jobs={jobDataArray} />
             </div>
-            <div className="w-[100%] lg:w-[1px] border border-tertiary mb-4 lg:mx-5 lg:min-h-screen" />
+            <div className="w-[90%] xl:self-auto lg:w-[1px] border border-tertiary mb-4 lg:mx-5 self-center" />
             <div className="xl:w-2/4 mb-10">
               <Experiences dataArray={dataArray} />
             </div>
