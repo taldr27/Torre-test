@@ -30,6 +30,8 @@
 
 **Torre Test** is a home assignment project developed using Vite, React, Tailwind CSS, and Context API. It utilizes a Torre-provided API to retrieve data related to a specific job and search for user information using an ID. Additionally, a separate backend repository is created using Ruby on Rails, which includes endpoints for searching users and fetching data for specific jobs. [Backend Repository](https://github.com/taldr27/Torre-Test-Backend)
 
+_Note: To solve the problem with the slow fetching on the render.com deployment, I created a deployment on Vercel using express, you can find the repository [here](https://github.com/taldr27/express-deployment)._
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
