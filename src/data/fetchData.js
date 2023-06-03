@@ -1,8 +1,12 @@
 import axios from 'axios';
 
-// Render Back-End Links, it needs time for the first load.
-const userUrl = 'https://torre-backend-test.onrender.com/users/';
-const jobUrl = 'https://torre-backend-test.onrender.com/jobs/';
+// Render.com Back-End Links, it needs time for the first load.
+// const deployedUrl = 'https://torre-backend-test.onrender.com/users/';
+// const deployedJobUrl = 'https://torre-backend-test.onrender.com/jobs/';
+
+const userUrl = 'https://express-deployment-ashen.vercel.app/api/bios/';
+const jobUrl = 'https://express-deployment-ashen.vercel.app/api/jobs/';
+
 const defaultUser = localStorage.getItem('user') || 'torrenegra';
 
 // Using the software engineering job post
