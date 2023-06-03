@@ -17,19 +17,19 @@ const Navbar = ({ onSearchValue }) => {
   };
 
   return (
-    <nav className="flex justify-between w-full h-[72px] bg-primary text-white px-4 py-[21px] shadow-xl">
+    <nav className="flex justify-between w-full h-[72px] bg-primary text-white px-4 xl:px-32 py-[21px] shadow-xl">
       <div className="flex items-center gap-5">
-        <RxHamburgerMenu className="text-xl" />
+        <RxHamburgerMenu className="text-xl xl:hidden" />
         {!showSearch && (
           <>
-            <h2 className="text-2xl">
+            <h2 className="text-2xl xl:text-3xl">
               torre
               <span className="text-secondary">.co</span>
             </h2>
           </>
         )}
       </div>
-      <div className="flex items-center gap-5 text-xl">
+      <div className="flex items-center gap-5 text-xl xl:text-2xl">
         {!showSearch ? (
           <button type="button" onClick={() => setShowSearch(true)}>
             <RxMagnifyingGlass />
